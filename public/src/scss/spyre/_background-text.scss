@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Background text
+   ========================================================================== */
+
+[data-background-text],
+.bg-text {
+    position: relative;
+
+    &::after {
+        content: attr(data-background-text);
+        font-family: $headings-font-family;
+    }
+}

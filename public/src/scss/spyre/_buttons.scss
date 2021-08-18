@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+    font-family: $headings-font-family;
+    text-transform: uppercase;
+}
+
+/* Button sizes
+   ========================================================================== */
+.btn-lg {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-base, $btn-line-height-lg, $btn-border-radius-lg);
+}
+
+.btn-sm {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-base, $btn-line-height-sm, $btn-border-radius-sm);
+}
+
+/* Social media colors
+   ========================================================================== */
+@each $color, $value in $social-media-colors {
+    .btn-#{$color} {
+        @include button-variant($value, $value);
+    }
+}

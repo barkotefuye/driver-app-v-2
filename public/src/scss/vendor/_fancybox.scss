@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Fancybox
+   ========================================================================== */
+
+.fancybox-bg {
+    background: $fancy-background-bg-color;
+}
+
+.fancybox-is-open .fancybox-bg {
+    opacity: $fancy-background-bg-opacity;
+}
+
+.fancybox-button,
+.fancybox-button:link,
+.fancybox-button:visited {
+    background: rgba($fancy-toolbar-icon-bg, $fancy-toolbar-icon-bg-opacity);
+    color: $fancy-toolbar-icon-color;
+}
+
+.fancybox-caption {
+    background: linear-gradient(
+    to top,
+    rgba($fancy-background-bg-color, .85) 0%,
+    rgba($fancy-background-bg-color, .3) 50%,
+    rgba($fancy-background-bg-color, .15) 65%,
+    rgba($fancy-background-bg-color, .075) 75.5%,
+    rgba($fancy-background-bg-color, .037) 82.85%,
+    rgba($fancy-background-bg-color, .019) 88%,
+    rgba($fancy-background-bg-color, 0) 100%
+    );
+    color: $fancy-caption-color;
+}
+
+.fancybox-navigation {
+    .fancybox-button {
+        display: inline-block;
+        width: 3.125rem;
+        height: 3.125rem;
+        padding: 0;
+        margin: 0;
+        background-color: $fancy-nav-bg;
+        color: $fancy-nav-color;
+        cursor: pointer;
+
+        &:hover:not([disabled]) {
+            background-color: $fancy-nav-bg-hover;
+            color: $fancy-nav-color-hover;
+        }
+
+        &[disabled] {
+            opacity: $fancy-nav-disabled-opacity;
+            color: $fancy-nav-color;
+			cursor: default;
+        }
+
+        div {
+            padding: 11px;
+        }
+    }
+}
+
+
+@include media-breakpoint-up(lg) {
+    .fancybox-slide {
+        padding: 80px 120px;
+    }
+}

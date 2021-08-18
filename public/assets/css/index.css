@@ -1,0 +1,62 @@
+body{
+    background-color: #ecedf4;
+}
+.line-height-ul{
+    line-height: 20px;
+}
+.font-sm{
+    font-size: small;
+}
+.backgroudFocused{
+    background: #f2f5ff;
+}
+.backButton{
+    background-color: #ced0da;
+}
+.deleteSVG{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    margin-top: 7px;
+}
+.deleteSVG:hover{
+    fill: gray;
+}
+.displayNone{
+    display: none !important;
+}
+.thBackgroudColor{
+   background-color: #e5eaf4;
+}
+#sig-canvas {
+    border: 2px dotted #CCCCCC;
+    border-radius: 10px;
+    width: 100% !important;
+}
+#holder{
+    width: 100%;
+    height: 150px;
+    border: 2px solid gray !important;
+    cursor: pointer;
+}
+#holder:hover{
+    border: 2px solid #dee2e6 !important;
+}
+.uploadContent{
+    margin-left: auto;
+    margin-right: auto;
+}
+.imageClass{
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px dotted gray;
+    margin-left: 10px;
+}
+.imagesDivScroll{
+    overflow-y: auto;
+    height: 100%;
+}
+#holder.hover { border: 2px solid #dee2e6 !important; }

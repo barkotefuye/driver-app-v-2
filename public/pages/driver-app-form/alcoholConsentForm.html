@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Nile Express</title>
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../assets/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../assets/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../assets/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../assets/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../assets/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../assets/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../assets/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/index.css">
+  <script src="../../assets/js/index.js"></script>
+</head>
+
+<body>
+  <div class="d-flex">
+    <img class="ml-auto mr-auto mt-2" height="120px" width="227px" src="logo.jpeg" />
+  </div>
+  <div class="d-flex mt-2 mb-4">
+    <div class="col-lg-7 col-10 ml-auto mr-auto bg-white">
+      <div class="pb-4 mt-4 border-bottom">
+        <h3 class="ml-4"> Controlled Substances and Alcohol Testing Consent Form</h3>
+      </div>
+      <div class="container mt-5 mb-4 m-3">
+        <form class="form-group" action="/additional-comments" name = "motorCarrierReq" method ="POST">
+
+          <p class = "mt-5">
+          By my signature I acknowledge that I have read, understand, and agree to comply with the drug and alcohol testing
+          program of <u><b style = "font-size: 20px;"> Nile Express LLC</b></u>
+          as well as the U.S. Department of Transportation Regulations as contained in 49 CFR Part 382.
+          </p>
+
+
+        <p class = "mt-5">
+          I also understand that it is a condition of being considered for employment, and continued employment by the company
+          that I agree to abide by the company policy. By my signature I consent to urine and/or breathe/saliva testing for
+          controlled substances and/or alcohol prior to and at any time during my employment when requested by my employer
+          on a random or event triggered basis. I hereby specifically authorize the company to have all and immediate access to
+          any and all of my urine and/or breath custody and control forms and the results thereof.
+        </p>
+        <p class = "mt-5">
+          I understand and agree that I may not be under any degree of influence of alcohol or controlled substance at any time
+          during my employment. Should any level of alcohol or controlled substance be detected in any of my breath, saliva, or
+          urine at any time while employed, the company shaůů have grounds for immediate termination of my employment. This
+          authorization specifically covers any random or event triggered testing as may be required by U.S. Department of
+          Regulations or company policy.
+        </p>
+        
+        <div class= "mt-3">
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <input class="form-control fieldsFocus" type="text" required>
+              <span class="pl-0 pt-2 text-sm text-muted font-sm">Printed Name</span>
+            </div>
+            <div class="col-lg-6 col-12">
+              <input class="form-control fieldsFocus" type="date" required>
+              <span class="pl-0 pt-2 text-sm text-muted font-sm">Today's Date</span>
+            </div>
+          </div>
+      </div>
+      <!-- Content -->
+      <p class="font-weight-bold mt-5">Applicant's Signature</p>
+      <div class="col-lg-6 col-12 pl-0">
+        <canvas id="sig-canvas">
+        </canvas>
+      </div>
+      <!-- <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button> -->
+      <div class="d-flex col-lg-6 col-12 pr-1">
+        <button class="btn btn-default ml-auto" id="sig-clearBtn">Clear</button>
+      </div>
+
+        <div class="pb-2 mt-4 border-bottom">
+          <h5>Controlled Substances and Alcohol Testing Policy Receipt</h5>
+        </div>
+        <div class="mt-5">
+          I, (Applicant) <div class = "col-lg-4 col-12"><input class = "form-control fieldsFocus"  type = "text" required/> </div>
+          have received a copy of the Controlled Substance and Alcohol Testing Policy for <u><b style = "font-size: 15px;">Nile Express LLC</b></u>. 
+          By my signature, I acknowledge that I have read, understand, and consent to this Policy.</p>
+        <div>
+
+          <div class= "mt-3">
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus" type="text" required>
+                <span class="pl-0 pt-2 text-sm text-muted font-sm">Printed Name</span>
+              </div>
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus" type="date" required>
+                <span class="pl-0 pt-2 text-sm text-muted font-sm">Today's Date</span>
+              </div>
+            </div>
+        </div>
+        <!-- Content -->
+        <p class="font-weight-bold mt-5">Applicant's Signature</p>
+        <div class="col-lg-6 col-12 pl-0">
+          <canvas id="sig-canvas">
+          </canvas>
+        </div>
+        <!-- <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button> -->
+        <div class="d-flex col-lg-6 col-12 pr-1">
+          <button class="btn btn-default ml-auto" id="sig-clearBtn">Clear</button>
+        </div>
+        
+        
+        <div class="pb-2 mt-4 border-bottom">
+          <h5>Application Certification</h5>
+        </div>
+        <div class="mt-5">
+          <p>This certifies that this application was completed by me, and that all entries on it and information in it are true and
+        complete to the best of my knowledge.
+          </p>
+        <div>
+
+          <div class= "mt-3">
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus" type="text" required>
+                <span class="pl-0 pt-2 text-sm text-muted font-sm">Printed Name</span>
+              </div>
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus" type="date" required>
+                <span class="pl-0 pt-2 text-sm text-muted font-sm">Today's Date</span>
+              </div>
+            </div>
+        </div>
+        <!-- Content -->
+        <p class="font-weight-bold mt-5">Applicant's Signature</p>
+        <div class="col-lg-6 col-12 pl-0">
+          <canvas id="sig-canvas">
+          </canvas>
+        </div>
+        <!-- <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button> -->
+        <div class="d-flex col-lg-6 col-12 pr-1">
+          <button class="btn btn-default ml-auto" id="sig-clearBtn">Clear</button>
+        </div>
+
+        <div class="d-flex pt-4 mb-3 border-top">
+          <a href="employementHistory.html" class="ml-4 btn mr-lg-5 px-4 backButton">Back</a>
+          <button type="submit" class="ml-auto btn btn-primary mr-lg-5 mr-2 px-4 nextButton">Next</button>
+        </div>
+      </form>
+      </div>
+
+    </div>
+</body>
+<script>
+  (function () {
+    window.requestAnimFrame = (function (callback) {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimaitonFrame ||
+        function (callback) {
+          window.setTimeout(callback, 1000 / 60);
+        };
+    })();
+
+    var canvas = document.getElementById("sig-canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "#222222";
+    ctx.lineWidth = 3;
+
+    var drawing = false;
+    var mousePos = {
+      x: 0,
+      y: 0
+    };
+    var lastPos = mousePos;
+
+    canvas.addEventListener("mousedown", function (e) {
+      drawing = true;
+      lastPos = getMousePos(canvas, e);
+    }, false);
+
+    canvas.addEventListener("mouseup", function (e) {
+      drawing = false;
+    }, false);
+
+    canvas.addEventListener("mousemove", function (e) {
+      mousePos = getMousePos(canvas, e);
+    }, false);
+
+    // Add touch event support for mobile
+    canvas.addEventListener("touchstart", function (e) {
+
+    }, false);
+
+    canvas.addEventListener("touchmove", function (e) {
+      var touch = e.touches[0];
+      var me = new MouseEvent("mousemove", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      canvas.dispatchEvent(me);
+    }, false);
+
+    canvas.addEventListener("touchstart", function (e) {
+      mousePos = getTouchPos(canvas, e);
+      var touch = e.touches[0];
+      var me = new MouseEvent("mousedown", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      canvas.dispatchEvent(me);
+    }, false);
+
+    canvas.addEventListener("touchend", function (e) {
+      var me = new MouseEvent("mouseup", {});
+      canvas.dispatchEvent(me);
+    }, false);
+
+    function getMousePos(canvasDom, mouseEvent) {
+      var rect = canvasDom.getBoundingClientRect();
+      return {
+        x: mouseEvent.clientX - rect.left,
+        y: mouseEvent.clientY - rect.top
+      }
+    }
+
+    function getTouchPos(canvasDom, touchEvent) {
+      var rect = canvasDom.getBoundingClientRect();
+      return {
+        x: touchEvent.touches[0].clientX - rect.left,
+        y: touchEvent.touches[0].clientY - rect.top
+      }
+    }
+
+    function renderCanvas() {
+      if (drawing) {
+        ctx.moveTo(lastPos.x, lastPos.y);
+        ctx.lineTo(mousePos.x, mousePos.y);
+        ctx.stroke();
+        lastPos = mousePos;
+      }
+    }
+
+    // Prevent scrolling when touching the canvas
+    document.body.addEventListener("touchstart", function (e) {
+      if (e.target == canvas) {
+        e.preventDefault();
+      }
+    }, false);
+    document.body.addEventListener("touchend", function (e) {
+      if (e.target == canvas) {
+        e.preventDefault();
+      }
+    }, false);
+    document.body.addEventListener("touchmove", function (e) {
+      if (e.target == canvas) {
+        e.preventDefault();
+      }
+    }, false);
+
+    (function drawLoop() {
+      requestAnimFrame(drawLoop);
+      renderCanvas();
+    })();
+
+    function clearCanvas() {
+      canvas.width = canvas.width;
+    }
+
+    // Set up the UI
+    var sigText = document.getElementById("sig-dataUrl");
+    var sigImage = document.getElementById("sig-image");
+    var clearBtn = document.getElementById("sig-clearBtn");
+    var submitBtn = document.getElementById("sig-submitBtn");
+    clearBtn.addEventListener("click", function (e) {
+      clearCanvas();
+      sigText.innerHTML = "Data URL for your signature will go here!";
+      sigImage.setAttribute("src", "");
+    }, false);
+    submitBtn.addEventListener("click", function (e) {
+      var dataUrl = canvas.toDataURL();
+      sigText.innerHTML = dataUrl;
+      sigImage.setAttribute("src", dataUrl);
+    }, false);
+
+  })();
+</script>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Nile Express</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../assets/img/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../assets/img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../assets/img/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../assets/img/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../assets/img/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/img/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../assets/img/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/index.css">
+    <script src="../../assets/js/index.js"></script>
+  </head>
+  
+  <body>
+    <div class="d-flex">
+      <img class="ml-auto mr-auto mt-2" height="120px" width="227px" src="../../assets/img/logo.jpeg" />
+    </div>
+  <div class="d-flex mt-2 mb-4">
+    <div class="col-lg-7 col-10 ml-auto mr-auto bg-white">
+      <div class="pb-5 mt-4 border-bottom">
+        <h3 class="ml-4">Employment History</h3>
+        <p class="ml-4">All driver applicants must provide the following information on all work references during the preceding three (3) years from the
+          date application is submitted. Those drivers applying to operate a commercial motor vehicle as defined in §383.5 (requiring a CDL)
+          shall provide ten (10) years of employment history. <b>NOTE: Please list companies in reverse order starting with the most recent and
+            leave no gaps in employment history. Please request additional sheets if necessary.</b></b></p>
+      </div>
+      <div class="container mt-3 mb-4">
+        <form class="form-group" action="/safety-performance" method="POST">
+          <p>Work Experience:</p>
+            <div class="p-3">
+              <div class="row">
+                <div class="col-12">
+                  <input class="form-control fieldsFocus" name = "companyName" type="text">
+                  <span class="pt-2 text-muted font-sm">Company Name</span>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12">
+                  <input class="form-control fieldsFocus" name = "companyAddress" type="text">
+                  <span class="pt-2 text-muted font-sm">Company Address</span>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-lg-6 col-12">
+                  <input class="form-control fieldsFocus" name = "contactName" type="text">
+                  <span class="pt-2 text-muted font-sm">Contact Name</span>
+                </div>
+                <div class="col-lg-6 col-12">
+                  <input class="form-control fieldsFocus" name = "contactPhone" type="text">
+                  <span class="pt-2 text-muted font-sm">Contact Phone Number</span>
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col-lg-6 col-12">
+                  <input class="form-control fieldsFocus" name = "employedFrom" type="date">
+                  <span class="pt-2 text-muted font-sm">Employed from</span>
+                </div>
+                <div class="col-lg-6 col-12">
+                  <input class="form-control fieldsFocus" name = "employedTo" type="date">
+                  <span class="pt-2 text-muted font-sm">To</span>
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col-12">
+                  <input class="form-control fieldsFocus" name = "position" type="text">
+                  <span class="pl-0 pt-2 text-sm text-muted font-sm">Position(s) Held (as comma seperated values) </span>
+                </div>
+              </div>
+
+              <div class="p-3">
+                <p>Were you subject to Federal Motor Carrier Safety Regulations? <span class="text-danger font-weight-bold">*</span></p>
+                <div class="row">
+                  <div class="col-12">
+                    <div>
+                      <input class="fieldsFocusRadio" type="radio" name="subjectToSafetyRegulations" id="yesSafetySubjection" required>
+                      <label for="yesSafetySubjection">
+                        Yes
+                      </label>
+                    </div>
+                    <div>
+                      <input class="fieldsFocusRadio" type="radio" name="subjectToSafetyRegulations" id="noSafetySubjection" required>
+                      <label for="noSafetySubjection">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="p-3">
+                <p>Was this job designated as a safety senstive function in any D.O.T regulated mode subject to alcohol and controlled substance testing requirments as required by 49 CFR Part 40? <span class="text-danger font-weight-bold">*</span></p>
+                <div class="row">
+                  <div class="col-12">
+                    <div>
+                      <input class="fieldsFocusRadio" type="radio" name="subjectToAlcoholSafetyRegulations" id="yesAlcoholSubjection" required>
+                      <label for="yesAlcoholSubjection">
+                        Yes
+                      </label>
+                    </div>
+                    <div>
+                      <input class="fieldsFocusRadio" type="radio" name="subjectToAlcoholSafetyRegulations" id="noAlcoholSubjection" required>
+                      <label for="noAlcoholSubjection">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3">
+                <p>Reason for Leaving <span class="text-danger font-weight-bold">*</span></p>
+                <div class="row">
+                  <div class="col-12">
+                    <div>
+                      <input class="fieldsFocusRadio" type="radio" name="reasonForLeaving" id="resignation" required>
+                      <label for="resignation">
+                        Resignation
+                      </label>
+                    </div>
+                    <div>
+                      <input class="fieldsFocusRadio" type="radio" name="reasonForLeaving" id="layoff" required>
+                      <label for="layoff">
+                        Lay Off
+                      </label>
+                    </div>
+                    <div>
+                      <input class="fieldsFocusRadio" type="radio" name="reasonForLeaving" id="termination" required>
+                      <label for="termination">
+                        Termination
+                      </label>
+                    </div>
+                    <div>
+                      <input class="fieldsFocusRadio" type="radio" name="reasonForLeaving" id="other" required>
+                      <label for="other">
+                        Other
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="co-lg-6 col-12">
+                  <input class="form-control fieldsFocus" name = "otherReasonForLeaving" type="number">
+                  <span class="pt-2 text-muted font-sm">If you selected Other, please describe: </span>
+                </div>
+              </div>
+            </div>
+
+            <div class= "experienceSection">
+
+            </div>
+          
+          <button class="mt-2 btn btn-secondary addExperience" type="button">Add Experience</button>
+          <br>
+          <br>
+
+          <div class="d-flex pt-4 mb-3 border-top">
+            <a href="driverExperience.html" class="ml-4 btn mr-lg-5 px-4 backButton">Back</a>
+            <button type="submit" class="ml-auto btn btn-primary mr-lg-5 mr-2 px-4 nextButton">Next</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

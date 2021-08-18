@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Borders
+   ========================================================================== */
+
+
+/* Centered borders
+   ========================================================================== */
+
+$amounts: (10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+$unit: unquote("%");
+
+@each $amount in $amounts {
+    .border-top-centered-#{$amount},
+    .border-right-centered-#{$amount},
+    .border-bottom-centered-#{$amount},
+    .border-left-centered-#{$amount} {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background: $border-color !important;
+        }
+    }
+
+    .border-top-centered-#{$amount} {
+        &::before {
+            top: 0;
+            left: #{(100 - $amount) / 2}$unit;
+            width: #{$amount}$unit;
+            height: $border-width !important;
+        }
+
+        &.border-top-centered-faded {
+            &::before {
+                @include gradient-x-three-colors-bg(rgba($border-color, 0), rgba($border-color, 1), 50%, rgba($border-color, 0));
+            }
+        }
+    }
+
+    .border-right-centered-#{$amount} {
+        &::after {
+            right: 0;
+            top: #{(100 - $amount) / 2}$unit;
+            height: #{$amount}$unit;
+            width: $border-width !important;
+        }
+
+        &.border-right-centered-faded {
+            &::after {
+                @include gradient-y-three-colors-bg(rgba($border-color, 0), rgba($border-color, 1), 50%, rgba($border-color, 0));
+            }
+        }
+    }
+
+    .border-bottom-centered-#{$amount} {
+        &::after {
+            bottom: 0;
+            left: #{(100 - $amount) / 2}$unit;
+            width: #{$amount}$unit;
+            height: $border-width !important;
+        }
+
+        &.border-bottom-centered-faded {
+            &::after {
+                @include gradient-x-three-colors-bg(rgba($border-color, 0), rgba($border-color, 1), 50%, rgba($border-color, 0));
+            }
+        }
+    }
+
+    .border-left-centered-#{$amount} {
+        &::before {
+            top: #{(100 - $amount) / 2}$unit;
+            left: 0;
+            height: #{$amount}$unit;
+            width: $border-width !important;
+        }
+
+        &.border-left-centered-faded {
+            &::before {
+                @include gradient-y-three-colors-bg(rgba($border-color, 0), rgba($border-color, 1), 50%, rgba($border-color, 0));
+            }
+        }
+    }
+}

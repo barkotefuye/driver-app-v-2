@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+
+
+/* Overflows
+   ========================================================================== */
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .overflow#{$infix}-scroll, 
+        .overflow-x#{$infix}-scroll {
+            overflow-x: scroll !important;
+        }
+
+        .overflow#{$infix}-scroll, 
+        .overflow-y#{$infix}-scroll {
+            overflow-y: scroll !important;
+        }
+
+        .overflow#{$infix}-hidden,
+        .overflow-x#{$infix}-hidden {
+            overflow-x: hidden !important;
+        }
+
+        .overflow#{$infix}-hidden,
+        .overflow-y#{$infix}-hidden {
+            overflow-y: hidden !important;
+        }
+
+        .oveflow#{$infix}-auto,
+        .oveflow-x#{$infix}-auto {
+            overflow-x: auto !important;
+        }
+
+        .oveflow#{$infix}-auto,
+        .oveflow-y#{$infix}-auto {
+            overflow-y: auto !important;
+        }
+
+        .overflow#{$infix}-visible,
+        .overflow-x#{$infix}-visible {
+            overflow: visible !important;
+        }
+
+        .overflow#{$infix}-visible,
+        .overflow-y#{$infix}-visible {
+            overflow: visible !important;
+        }
+    }
+}
+
+
+/* Extends
+   ========================================================================== */
+
+/**
+ * Extend the area outside of the container.
+ * For example good for extend background color
+ */
+.ext-l,
+.ext-r {
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background-color: inherit;
+    }
+}
+
+.ext-l {
+    &::before {
+        @include make-widths-outside-container();
+        right: 100%;
+    }
+
+    &.ext-t,
+    &.ext-b {
+        &::after {
+            @include make-widths-outside-container();
+            right: 100%;
+            bottom: 100%;
+            top: auto;
+            height: 100%;
+        }
+
+        &.ext-h-100 {
+            &::after {
+                height: 100%;
+            }
+        }
+        &.ext-h-125 {
+            &::after {
+                height: 125%;
+            }
+        }
+        &.ext-h-150 {
+            &::after {
+                height: 150%;
+            }
+        }
+        &.ext-h-175 {
+            &::after {
+                height: 175%;
+            }
+        }
+        &.ext-h-200 {
+            &::after {
+                height: 200%;
+            }
+        }
+    }
+
+    &.ext-b {
+        &::after {
+            bottom: auto;
+            top: 100%;
+        }
+    }
+
+    &.ext-l-no-gutters {
+        &::before {
+            @include make-widths-outside-container-no-gutters();
+            right: 100%;
+        }
+
+        &.ext-t,
+        &.ext-b {
+            &::after {
+                @include make-widths-outside-container-no-gutters();
+                right: 100%;
+            }
+        }
+    }
+}
+
+.ext-r {
+    &::after {
+        @include make-widths-outside-container();
+        left: 100%;
+    }
+
+    &.ext-t,
+    &.ext-b {
+        &::before {
+            @include make-widths-outside-container();
+            left: 100%;
+            bottom: 100%;
+            top: auto;
+            height: 100%;
+        }
+
+        &.ext-h-100 {
+            &::before {
+                height: 100%;
+            }
+        }
+        &.ext-h-125 {
+            &::before {
+                height: 125%;
+            }
+        }
+        &.ext-h-150 {
+            &::before {
+                height: 150%;
+            }
+        }
+        &.ext-h-175 {
+            &::before {
+                height: 175%;
+            }
+        }
+        &.ext-h-200 {
+            &::before {
+                height: 200%;
+            }
+        }
+    }
+
+    &.ext-b {
+        &::before {
+            bottom: auto;
+            top: 100%;
+        }
+    }
+
+    &.ext-r-no-gutters {
+        &::after {
+            @include make-widths-outside-container-no-gutters();
+            left: 100%;
+        }
+
+        &.ext-t,
+        &.ext-b {
+            &::after {
+                @include make-widths-outside-container-no-gutters();
+                left: 100%;
+            }
+        }
+    }
+}
+
+
+// Breaking out from container
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .release#{$infix}-container {
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+        }
+        .unrelease#{$infix}-container {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}

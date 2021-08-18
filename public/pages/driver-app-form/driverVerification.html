@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Nile Express</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../assets/img/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../assets/img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../assets/img/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../assets/img/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../assets/img/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/img/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../assets/img/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/index.css">
+    <script src="../../assets/js/index.js"></script>
+  </head>
+  
+  <body>
+    <div class="d-flex">
+      <img class="ml-auto mr-auto mt-2" height="120px" width="227px" src="../../assets/img/logo.jpeg" />
+    </div>
+
+  <div class="d-flex mt-2 mb-4">
+    <div class="col-lg-7 col-10 ml-auto mr-auto bg-white">
+      <div class="pb-5 mt-4 border-bottom">
+        <h3 class="ml-4">Driver Verification</h3>
+        <p class="ml-4">The following information will be used to verify you as a driver </p>
+      </div>
+      <div class="container mt-3 mb-4">
+        <form class="form-group" action="/driver-experience" name = "driverVerify" method ="POST">
+          <div class="p-3 appendFieldsContainer">
+            <p>Please list out all of the places you have lived in the past three years
+
+            </p>
+            <div class ="row">
+              <div class = "col-12">
+                <div>
+                  <div class="p-3">
+                    <p>Address <span class="text-danger font-weight-bold">*</span></p>
+                    <div class="row">
+                      <div class="col-12">
+                        <input class="form-control fieldsFocus" type="text" name = "currentAddress1" id = "address1" required>
+                        <span class="pt-2 text-muted font-sm">Street Address</span>
+                      </div>
+                    </div>
+                    <div class="row mt-3">
+                      <div class="col-12">
+                        <input class="form-control fieldsFocus" type="text" name = "currentAddress2" id = "address2">
+                        <span class="pt-2 text-muted font-sm">Street Address Line 2</span>
+                      </div>
+                    </div>
+                    <div class="row mt-3">
+                      <div class="col-lg-6 col-12">
+                        <input class="form-control fieldsFocus" type="text" name = "currentCity"  id = "city" required>
+                        <span class="pl-0 pt-2 text-sm text-muted font-sm">City</span>
+                      </div>
+                      <div class="col-lg-2 col-12">
+                        <input class="form-control ml-auto mr-5 fieldsFocus" type="text" maxlength = "2" name = "currentState"  id = "state" required>
+                        <span class="pt-2 text-muted font-sm" >State / Province</span>
+                      </div>
+                      <div class="col-lg-4 col-12">
+                        <input class="form-control fieldsFocus" type="text" maxlength="10" name = "currentZipcode"  id = "zipcode" required>
+                        <span class="pt-2 text-muted font-sm">Postal / Zip Code</span>
+                      </div>
+                    </div>
+                    <div class="row mt-3">
+                      <div class="col-lg-6 col-12">
+                        <input class="form-control fieldsFocus" type="date" name = "startDateAddress" required>
+                        <span class="pl-0 pt-2 text-sm text-muted font-sm">Start Date</span>
+                      </div>
+                      <div class="col-lg-6 col-12">
+                        <input class="form-control ml-auto mr-5 fieldsFocus" type="date" maxlength = "2" name = "endDateAddress" required>
+                        <span class="pt-2 text-muted font-sm" >End Date</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="appendFields">
+                  <!-- fields added in here-->
+
+                </div>
+              </div>
+            </div>
+            <button class="mt-2 btn btn-secondary addMoreBtn" type="button">ADD MORE</button>
+          </div>
+
+          <div class="p-3">
+            <p>Social Security Number <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-2 col-12">
+                <!-- <input class="form-control fieldsFocus" placeholder="(000) 000-0000" type="text"  maxlength = "12" required> -->
+                   <input class="form-control fieldsFocus" name="ssnStart" type="password" pattern="[0-9]{3}"  aria-label="3-digit start social security number" size="3" maxlength="3" oninput="autotab(this, document.driverVerify.ssnMiddle)" required/>
+              </div>-
+              <div class="col-lg-2 col-12">
+                    <input class="form-control fieldsFocus" name="ssnMiddle" type="password" pattern="[0-9]{2}"  aria-label="2-digit middle social security number" size="2" maxlength="2" oninput="autotab(this, document.driverVerify.ssnLastFour)" required/> 
+              </div>-
+              <div class="col-lg-2 col-12">
+                    <input class="form-control fieldsFocus" name="ssnLastFour" type="password" pattern="[0-9]{4}"  aria-label="last 4-digits of social security number" size="4" maxlength="4" required/>
+              </div> 
+                 
+              </div>
+          </div>
+
+          <div class="p-3">
+            <p>CDL# <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus"  name = "cdl" type="text"  maxlength="15" required> 
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>Have you ever been denied a license, permit, or privilege to operate a motor vehicle?
+              <span class="text-danger font-weight-bold">*</span>
+            </p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="deniedPermit" id="yesDenied" required>
+                  <label for="yesDenied">
+                    Yes
+                  </label>
+                </div>
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="deniedPermit" id="noDenied" required>
+                  <label for="noDenied">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>Have you ever had any license, permit, or privilege to operate ever suspended or revoked?
+              <span class="text-danger font-weight-bold">*</span>
+            </p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="suspended" id="yesSuspended" required>
+                  <label for="yesSuspended">
+                    Yes
+                  </label>
+                </div>
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="suspended" id="noSuspended" required>
+                  <label for="noSuspended">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>If you answered yes to either question, please explain below </p>
+            <div class="row">
+              <div class="col-12">
+                <textarea class="form-control fieldsFocus" placeholder="Type here..." rows="4" name="licenseDismissalExplanation"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- <script>
+            // This sample uses the Places Autocomplete widget to:
+        // 1. Help the user select a place
+        // 2. Retrieve the address components associated with that place
+        // 3. Populate the form fields with those address components.
+        // This sample requires the Places library, Maps JavaScript API.
+        // Include the libraries=places parameter when you first load the API.
+        // For example: <script
+        // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+        let autocomplete;
+        let address1Field;
+        let address2Field;
+        let postalField;
+    
+        function initAutocomplete() {
+          address1Field = document.querySelector("#address1");
+          address2Field = document.querySelector("#address2");
+          postalField = document.querySelector("#zipcode");
+          // Create the autocomplete object, restricting the search predictions to
+          // addresses in the US and Canada.
+          autocomplete = new google.maps.places.Autocomplete(address1Field, {
+            componentRestrictions: { country: ["us"] },
+            fields: ["address_components", "geometry"],
+            types: ["address"],
+          });
+          address1Field.focus();
+          // When the user selects an address from the drop-down, populate the
+          // address fields in the form.
+          autocomplete.addListener("place_changed", fillInAddress);
+        }
+    
+        function fillInAddress() {
+          // Get the place details from the autocomplete object.
+          const place = autocomplete.getPlace();
+          let address1 = "";
+          let postcode = "";
+    
+          // Get each component of the address from the place details,
+          // and then fill-in the corresponding field on the form.
+          // place.address_components are google.maps.GeocoderAddressComponent objects
+          // which are documented at http://goo.gle/3l5i5Mr
+          for (const component of place.address_components) {
+            const componentType = component.types[0];
+    
+            switch (componentType) {
+              case "street_number": {
+                address1 = `${component.long_name} ${address1}`;
+                break;
+              }
+    
+              case "route": {
+                address1 += component.short_name;
+                break;
+              }
+    
+              case "postal_code": {
+                postcode = `${component.long_name}${postcode}`;
+                break;
+              }
+    
+              case "postal_code_suffix": {
+                postcode = `${postcode}-${component.long_name}`;
+                break;
+              }
+              case "locality":
+                document.querySelector("#city").value = component.long_name;
+                break;
+    
+              case "administrative_area_level_1": {
+                document.querySelector("#state").value = component.short_name;
+                break;
+              }
+            }
+          }
+          address1Field.value = address1;
+          postalField.value = postcode;
+          // After filling the form with address components from the Autocomplete
+          // prediction, set cursor focus on the second address line to encourage
+          // entry of subpremise information such as apartment, unit, or floor number.
+          address2Field.focus();
+        }
+      </script>
+    
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBi3DHOpxGAb_QwCqaaeMMFKKX9MBmBug&callback=initAutocomplete&libraries=places&v=weekly" 
+      async>
+    </script> -->
+
+          <div class="d-flex pt-4 mb-3 border-top">
+            <a href="general-info" class="ml-4 btn mr-lg-5 px-4 backButton">Back</a>
+            <button type="submit" class="ml-auto btn btn-primary mr-lg-5 mr-2 px-4 nextButton">Next</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

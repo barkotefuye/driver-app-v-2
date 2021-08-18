@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Carousel
+   ========================================================================== */
+
+.owl-carousel {
+
+    /* Navs
+    ========================================================================== */
+
+    /* Nav arrows live inside the carousel in the corner */
+	.owl-nav {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+		-webkit-tap-highlight-color: transparent;
+
+        button {
+            &.owl-prev,
+            &.owl-next {
+                display: inline-block;
+                width: 3.125rem;
+                height: 3.125rem;
+                line-height: 3.125rem;
+                background-color: $carousel-nav-bg;
+                color: $carousel-nav-color;
+                font-size: $carousel-nav-font-size;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $carousel-nav-bg-hover;
+                    color: $carousel-nav-color-hover;
+                    text-decoration: none;
+                }
+            }
+
+            &.owl-prev {
+                margin-right: 1px;
+            }
+        }
+		.disabled {
+			opacity: $carousel-nav-disabled-opacity;
+			cursor: default;
+		}
+    }
+    
+    /* Nav arrows live on the two edges of the carousel */
+    &.carousel-nav-edge {
+        .owl-nav {
+            left: 0;
+            right: 0;
+            bottom: auto;
+            top: 50%;
+            transform: translateY(-50%);
+
+            button {
+                &.owl-prev {
+                    margin-right: auto;
+                    margin-left: 1.5625rem;
+                }
+
+                &.owl-next {
+                    float: right;
+                    margin-right: 1.5625rem;
+                }
+            }
+        }
+    }
+
+    /* Nav arrows live on the two edges of the carousel, but inside */
+    &.carousel-nav-inside-container {
+        .owl-nav {
+            @include make-widths-container();
+            top: 50%;
+            left: 50%;
+            right: auto;
+            bottom: auto;
+            width: 100%;
+            transform: translate(-50%, -50%);
+
+            @include media-breakpoint-up(lg) {
+                button {
+                    &.owl-prev {
+                        margin-right: auto;
+                        margin-left: -1.5625rem;
+                    }
+    
+                    &.owl-next {
+                        float: right;
+                        margin-right: -1.5625rem;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Nav arrows use different color and smaller size */
+    &.carousel-nav-primary {
+        button {
+            &.owl-prev,
+            &.owl-next {
+                width: 4.1875rem;
+                height: 2.3125rem;
+                line-height: 2.3125rem;
+                background-color: $carousel-primary-nav-bg;
+                color: $carousel-primary-nav-color;
+
+                &:hover {
+                    background-color: $carousel-primary-nav-bg-hover;
+                    color: $carousel-primary-nav-color-hover;
+                }
+            }
+
+            &.owl-prev {
+                margin-right: auto;
+            }
+
+            &.owl-next {
+                float: right;
+            }
+
+            @include media-breakpoint-up(lg) {
+                &.owl-prev {
+                    margin-left: -2.09375rem;
+                }
+    
+                &.owl-next {
+                    margin-right: -2.09375rem;
+                }
+            }
+        }
+    }
+
+    .owl-nav.disabled + .owl-dots {
+		margin-top: 10px;
+	}
+
+    /* Dots
+    ========================================================================== */
+	.owl-dots {
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+
+		.owl-dot {
+			display: inline-block;
+			zoom: 1;
+
+			span {
+                display: block;
+                -webkit-backface-visibility: visible;
+				width: $carousel-dot-width;
+				height: $carousel-dot-height;
+				margin: $carousel-dot-margin;
+				background: $carousel-dot-bg;
+				border-radius: $carousel-dot-rounded;
+                transition: opacity .2s ease;
+			}
+
+			&.active {
+				span {
+					background: $carousel-dot-bg-active;
+				}
+			}
+		}
+	}
+}

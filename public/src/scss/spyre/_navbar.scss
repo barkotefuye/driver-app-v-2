@@ -1,0 +1,504 @@
+/* ==========================================================================
+   SPYRE Navbar
+   ========================================================================== */
+
+
+/* Navbar
+   ========================================================================== */
+.spyre-navbar {
+    height: 60px;
+    flex-wrap: nowrap;
+
+    .navbar-brand {
+        margin-top: 20px;
+    }
+
+    .navbar-text {
+        position: relative;
+        font-family: $headings-font-family;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color .5s ease;
+
+        a {
+            transition: color .5s ease;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .spyre-navbar {
+        height: 80px;
+    }
+}
+
+
+
+/* Toggler
+   ========================================================================== */
+.menu-toggle {
+    position: relative;
+    width: 37px;
+    min-width: 37px;
+    height: 37px;
+    left: 3px;
+    top: -1px;
+    cursor: pointer;
+
+    span {
+        background: $spyre-nav-icons-color;
+        transition-property: top, left, width, height;
+        transition: .25s ease-in-out;
+    }
+
+    .hamburger {
+        position: absolute;
+        height: 37px;
+        width: 37px;
+
+        span {
+            position: absolute;
+            right: 4px;
+            width: 30px;
+            height: 3px;
+
+            &:nth-child(1){
+                top: 8px;
+                transition-delay: .5s;
+            }
+            &:nth-child(2){
+                width: 20px;
+                top: 17px;
+                transition-delay: .625s;
+            }
+            &:nth-child(3){
+                bottom: 8px;
+                width: 24px;
+                transition-delay: .75s;
+            }
+        }
+    }
+
+    .cross {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform: rotate(45deg);
+
+        span {
+            position: absolute;
+
+            &:nth-child(1){
+                height: 0%;
+                width: 3px;
+                top: 0;
+                left: 17px;
+                transition-delay: 0s;
+            }
+            &:nth-child(2){
+                width: 0%;
+                height: 3px;
+                top: 17px;
+                left: 0;
+                transition-delay: .25s;
+            }
+        }
+    }
+
+    &.open {
+        .hamburger {
+            span {
+                width: 0%;
+    
+                &:nth-child(1){
+                    transition-delay: 0s;
+                }
+                &:nth-child(2){
+                    transition-delay: .1s;
+                }
+                &:nth-child(3){
+                    transition-delay: .2s;
+                }
+            }
+        }
+
+        .cross {
+            span {
+                background: $spyre-nav-hover-icons-color;
+
+                &:nth-child(1){
+                    height: 37px;
+                    transition-delay: .5s;
+                }
+                &:nth-child(2){
+                    width: 37px;
+                    transition-delay: .3s;
+                }
+            }   
+        }
+    }
+}
+
+
+
+/* Search
+   ========================================================================== */
+.search {
+    position: relative;
+
+    i {
+        font-size: 2.3rem;
+        color: $spyre-nav-icons-color;
+        cursor: pointer;
+    }
+
+    .form-control {
+        position: absolute;
+        right: 50px;
+        width: 0;
+        padding: 0;
+        background: none;
+        border: none;
+        border-bottom: 1px solid rgba($searchbar-border-color, .3);
+        color: $searchbar-color;
+        font-size: 30px;
+        font-weight: 700;
+        transition: width .5s ease-in-out;
+    }
+
+    &.open {
+        width: 100%;
+
+        i {
+            color: $spyre-nav-hover-icons-color;
+        }
+
+        .form-control {
+            width: calc(100% - 100px);
+
+            &:focus {
+                border-color: rgba($searchbar-border-color, 0.5);
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+
+
+/* Navbar nav
+   ========================================================================== */
+.spyre-navbar-nav-container {
+    height: 100vh;
+}
+
+.spyre-navbar-nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 82px;
+    width: 100%;
+    height: calc(100vh - 82px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 $grid-gutter-width / 2;
+    font-family: $headings-font-family;
+    animation: scale-down-ver-center .5s cubic-bezier(.390, .575, .565, 1.000) both;
+
+    &.open {
+        animation: scale-up-ver-center .5s cubic-bezier(.390, .575, .565, 1.000) .8s both;
+    }
+}
+
+.spyre-nav {
+    width: 100%;
+    height: auto;
+    margin: auto 0;
+    padding: 0;
+    list-style: none;
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=); // Edge empty list
+    list-style-type: none;
+    text-align: center;
+
+    .show {
+        .spyre-nav-link {
+            &.dropdown-toggle {
+                &::after {
+                    content: '\f2fc';
+                }
+            }
+        }
+    }
+
+    .active,
+    .show {
+        .spyre-nav-link {
+            color: $spyre-nav-link-active-color;
+        }
+    }
+}
+
+.spyre-nav-item {
+    margin-bottom: .75rem;
+
+    .dropdown-menu {
+        position: relative;
+        margin: .5rem .5rem .625rem;
+        padding: 0 1.25rem;
+        float: none;
+        border: none;
+        background: none;
+        text-align: inherit;
+    }
+}
+
+.spyre-nav-link  {
+    position: relative;
+    display: block;
+    font-weight: 300;
+    font-size: 1.875rem;
+    color: $spyre-nav-link-color;
+    line-height: 2.25rem;
+    text-transform: uppercase;
+    transition: color .3s ease;
+
+    &:hover {
+        text-decoration: none;
+        color: $spyre-nav-link-hover-color;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &.dropdown-toggle {
+        &::after {
+            @extend .zmdi;
+            content: '\f2f9';
+            display: inline !important;
+            margin-left: .35em;
+            border: none;
+            vertical-align: baseline;
+            line-height: 0;
+            font-size: 1.875rem;
+        }
+    }
+}
+
+.dropdown-menu-item {
+    margin-bottom: .4rem;
+
+    &.active,
+    &.show {
+        .dropdown-menu-link {
+            color: $spyre-nav-link-active-color;
+        }
+    }
+}
+
+.dropdown-menu-link {
+    position: relative;
+    display: block;
+    font-weight: 300;
+    font-family: $font-family-base;
+    color: $spyre-nav-link-color;
+    line-height: 2.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4rem;
+    transition: color .3s ease;
+
+    &:hover {
+        text-decoration: none;
+        color: $spyre-nav-link-hover-color;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .spyre-navbar-nav {
+        top: 100px;
+        height: calc(100vh - 100px);
+    }
+
+    .spyre-nav {
+        text-align: left;
+    }
+
+    .spyre-nav-item {
+        margin-bottom: .875rem;
+
+        .dropdown-menu {
+            &::before {
+                content:'';
+                position: absolute;
+                top: .3rem;
+                bottom: .2rem;
+                left: 0;
+                width: 1px;
+                background-color: $spyre-nav-link-active-color;
+            }
+        }
+    }
+
+    .spyre-nav-link {
+        font-size: 2.875rem;
+        line-height: 3.5rem;
+
+        &.dropdown-toggle {
+            &::after {
+                font-size: 2.875rem;
+            }
+        }
+    }
+}
+
+
+/* Navbar Ovrelay
+   ========================================================================== */
+.spyre-navbar-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+    left: 0;
+    z-index: -1;
+    visibility: hidden;
+    overflow: hidden;
+    background: rgba($spyre-overlay-bg-color, $spyre-overlay-bg-opacity);
+
+    &.open {
+        visibility: visible;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .spyre-navbar-overlay {
+        .container {
+            width: 100%;
+            max-width: none;
+        }
+    }
+}
+
+
+
+/* Ovrelay Effetcs
+   ========================================================================== */
+
+/* Overlay effect: Slide */
+.overlay-slide {
+    width: 0;
+    min-height: 100%;
+    top: 0;
+    left: auto;
+    right: 0;
+    height: auto;
+    transform-origin: 100% 0;
+    transition-property: min-height, width, top, right, visibility;
+    transition-duration: .8s;
+    transition-timing-function: cubic-bezier(.7,1,.3,1);
+
+    &.open {
+        width: 100%;
+        min-height: 100%;
+        top: 0px;
+        right: 0px;
+    }
+}
+
+
+/* Overlay effect: Fade */
+.overlay-fade {
+	opacity: 0;
+    transition: opacity .5s, visibility 0s .5s;
+    
+    &.open {
+        opacity: 1;
+        transition: opacity .5s;
+    }
+}
+
+
+/* Overlay effect: Fall down */
+.overlay-fall-down {
+    opacity: 0;
+	transform: translateY(-100%);
+    transition: opacity .5s, transform .5s, visibility 0s .5s;
+    
+    &.open {
+        opacity: 1;
+        transform: translateX(0%);
+        transition: opacity .5s, transform .5s;
+    }
+}
+
+
+/* Overlay effect: Scale up */
+.overlay-scale-up {
+	opacity: 0;
+	transform: scale(.9);
+    transition: transform .5s, opacity .4s, visibility 0s .5s;
+    
+    &.open {
+        opacity: 1;
+        transform: scale(1);
+        transition: transform .5s, opacity .5s;
+    }
+}
+
+
+/* Overlay effect: Scale down */
+.overlay-scale-down {
+	opacity: 0;
+	transform: scale(1.1);
+    transition: transform .5s, opacity .5s, visibility 0s .5s;
+    
+    &.open {
+        opacity: 1;
+        transform: scale(1);
+        transition: transform .5s, opacity .5s;
+    }
+}
+
+
+/* Overlay effect: Corner */
+.overlay-corner {
+    width: 0;
+    min-height: 0;
+    top: 0;
+    left: auto;
+    right: 0;
+    height: 0;
+    opacity: 0;
+    transform-origin: 100% 0;
+    transition-property: min-height, width, top, right, opacity, visibility;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.7,0,.3,1);
+
+    &.open {
+        opacity: 1;
+        width: 100%;
+        min-height: 100%;
+        top: 0px;
+        right: 0px;
+    }
+}
+
+
+/* Keyframes */
+@keyframes scale-up-ver-center {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes scale-down-ver-center {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0);
+    }
+}

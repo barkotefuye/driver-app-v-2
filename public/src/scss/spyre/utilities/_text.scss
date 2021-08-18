@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Text
+   ========================================================================== */
+
+
+/* Color
+========================================================================== */
+@each $element, $value in $grays {
+    .text-#{$element} {
+        color: $value !important;
+    }
+}
+
+
+
+/* Weight
+   ========================================================================== */
+.fw-thin {font-weight: 100 !important;}
+.fw-extra-light {font-weight: 200 !important;}
+.fw-light {font-weight: 300 !important;}
+.fw-normal {font-weight: 400 !important;}
+.fw-medium {font-weight: 500 !important;}
+.fw-semi-bold {font-weight: 600 !important;}
+.fw-bold {font-weight: 700 !important;}
+.fw-extra-bold {font-weight: 800 !important;}
+.fw-black {font-weight: 900 !important;}
+
+
+
+/* Text size from .fs--2 to .fs-9 
+   ========================================================================== */
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        @each $prop, $abbrev in (font-size: fs) {
+            @each $size, $length in $font-sizes {
+
+                .#{$abbrev}#{$infix}-#{$size} {
+                    #{$prop}: $length !important;
+                }
+            }
+        }
+    }
+}
+
+
+$amounts: (10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
+
+@each $amount in $amounts {
+    .lh-#{$amount} {
+        line-height: #{($amount / 10)};
+    }
+}

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+    position: relative;
+    background-color: $footer-bg;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($footer-bg, $footer-bg-opacity);
+    }
+}

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Nile Express</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../assets/img/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../assets/img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../assets/img/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../assets/img/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../assets/img/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/img/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../assets/img/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/index.css">
+    <script src="../../assets/js/index.js"></script>
+  </head>
+  
+  <body>
+    <div class="d-flex">
+      <img class="ml-auto mr-auto mt-2" height="120px" width="227px" src="../../assets/img/logo.jpeg" />
+    </div>
+  <div class="d-flex mt-2 mb-4">
+    <div class="col-lg-7 col-10 ml-auto mr-auto bg-white">
+      <div class="pb-5 mt-4 border-bottom">
+        <h3 class="ml-4">General Information</h3>
+        <p></p>
+      </div>
+      <div class="container mt-3 mb-4">
+        <form class="form-group" action="/employment-history" method ="POST"> <!--FORM START-->
+
+
+          <div class="p-3 ">
+            <p><b>Education: </b></p>
+            <div class="row">
+              <div class="col-12">
+                <table class="table table-bordered table-responsive addEducation">
+                  <thead>
+                    <tr>
+                      <th class="thBackgroudColor">Type of School <i>(Elem, High, Tech, College)</i></th>
+                      <th class="thBackgroudColor">Name of Institution(s)</th>
+                      <th class="thBackgroudColor">City</th>
+                      <th class="thBackgroudColor">State</th>
+                      <th class="thBackgroudColor">Highest Grade Completed or Degree Earned</th>
+                    </tr>
+                  </thead>
+                  <tbody class= "addDriverLicense">
+                    <tr>
+                      <td contenteditable="true" class="tableFields"><input type = "text"/> </td>
+                      <td contenteditable="true" class="tableFields"><input type = "text"/></td>
+                      <td contenteditable="true" class="tableFields"><input type = "text"/></td>
+                      <td contenteditable="true" class="tableFields"><input type = "text" maxlength = "2"/></td>
+                      <td contenteditable="true" class="tableFields"><input type = "text"/></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <button class="btn addrow"><i class="fas fa-plus-circle"></i> Add row</button>
+                <button class="btn minusrow"><i class="fas fa-minus-circle"></i> Delete row</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 ">
+            <p><b>Driver License's from Past Three Years Prior to Application Date <i>(complete for each license/ permit, including current driver's license)</i>:</b> <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-12">
+                <table class="table table-bordered table-responsive">
+                  <thead>
+                    <tr>
+                      <th class="thBackgroudColor"> State of Issue </th>
+                      <th class="thBackgroudColor"> License Number </th>
+                      <th class="thBackgroudColor"> Expiration Date </th>
+                      <th class="thBackgroudColor"> Type of Class of License </th>
+                      <th class="thBackgroudColor"> Endorsements </th>
+                    </tr>
+                  </thead>
+                  <tbody class= "addDriverLicense">
+                    <tr>
+                      <td contenteditable="true" class="tableFields"><input type = "text" maxlength = "2" required/></td> 
+                      <td contenteditable="true" class="tableFields"><input type = "text" maxlength ="15" required/></td>
+                      <td contenteditable="true" class="tableFields"><input type ="date" name = "expirationdate" required/></td>
+                      <td contenteditable="true" class="tableFields">
+                        <select class="form-control fieldsFocus"  name= "jobPosition" required>
+                        <option disabled>Please Select</option>
+                        <option>A </option>
+                        <option>B </option>
+                        <option>C</option>
+                      </select>
+                    </td>
+                      <td contenteditable="true" class="tableFields"><input type = "text" maxlength ="15"/></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <button class="btn"><i class="fas fa-plus-circle"></i> Add row</button>
+                <button class="btn"><i class="fas fa-minus-circle"></i> Delete row</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 ">
+            <p><b>Driving Experience in the Operation of Motor Vehicles: </b></p>
+            <div class="row">
+              <div class="col-12">
+                <table class="table table-bordered table-responsive">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th class="thBackgroudColor">Equipment Type</th>
+                      <th class="thBackgroudColor"># of Years Experience</th>
+                      <th class="thBackgroudColor">Approximate Number of Miles Driven (Total)</th>
+                    </tr>
+                  </thead>
+                  <tbody class= "addDriverLicense">
+                    <tr>
+                      <th class="thBackgroudColor">Tractor Trailer</th>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+                    <tr>
+                      <th class="thBackgroudColor">Straight Truck</th>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+                    <tr>
+                      <th class="thBackgroudColor">Bus</th>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+                    <tr>
+                      <th class="thBackgroudColor">Other:</th>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <button class="btn"><i class="fas fa-plus-circle"></i> Add row</button>
+                <button class="btn"><i class="fas fa-minus-circle"></i> Delete row</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 ">
+            <p><b>Accident Record From Past Three Years:</b> </p>
+            <div class="row">
+              <div class="col-12">
+                <table class="table table-bordered table-responsive">
+                  <thead>
+                    <tr>
+                      <th class="thBackgroudColor">Accident Date (starting with most recent)</th>
+                      <th class="thBackgroudColor">Nature of Accident (passenger vehicle, head-on, rear-end, etc.)</th>
+                      <th class="thBackgroudColor">Injuries/Fatalities</th>
+                      <th class="thBackgroudColor">Comments</th>
+                    </tr>
+                  </thead>
+                  <tbody class= "addDriverLicense">
+                    <tr>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+                    <tr>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+                    <tr>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+                    <tr>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <button class="btn"><i class="fas fa-plus-circle"></i> Add row</button>
+                <button class="btn"><i class="fas fa-minus-circle"></i> Delete row</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 ">
+            <p><b>Traffic Convictions and Forfetures From Past Three Years <i>(other than parking)</i>: If none, write none</b></p>
+            <div class="row">
+              <div class="col-12">
+                <table class="table table-bordered table-responsive">
+                  <thead>
+                    <tr>
+                      <th class="thBackgroudColor">Conviction Date</th>
+                      <th class="thBackgroudColor">Location (State)</th>
+                      <th class="thBackgroudColor">Charge</th>
+                      <th class="thBackgroudColor">Penalty</th>
+                    </tr>
+                  </thead>
+                  <tbody class= "addDriverLicense">
+                    <tr>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+                    <tr>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+                    <tr>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+                    <tr>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <button class="btn"><i class="fas fa-plus-circle"></i> Add row</button>
+                <button class="btn"><i class="fas fa-minus-circle"></i> Delete row</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>Have you ever been denied a license, permit, or privilege to operate a motor vehicle? <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="felony" id="yesFelony" required>
+                  <label for="yesFelony">
+                    Yes
+                  </label>
+                </div>
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="felony" id="noFelony" required>
+                  <label for="noFelony">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>Have you ever had any license, permit, or privilege to operate ever suspended or revoked? <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="felony" id="yesFelony" required>
+                  <label for="yesFelony">
+                    Yes
+                  </label>
+                </div>
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="felony" id="noFelony" required>
+                  <label for="noFelony">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>If yes, please explain below: </p>
+            <div class="row">
+              <div class="col-12">
+                <textarea class="form-control fieldsFocus" placeholder="Type here..." rows="4"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <strong>Please submit copy of your latest Driver's License (both front and back): </strong>
+            <div class="row mt-2">
+              <div class="col-12">
+                <input id="filetriger" class="d-none" onchange="readfiles(files)" type="file" multiple>
+                <!-- <input id="fileDragName"><input id="fileDragSize"><input
+                    id="fileDragType"><input id="fileDragData"> -->
+                <div id="holder">
+                  <div id="imageAppendDiv" class=""></div>
+                  <div id="browseImage">
+                    <div class="d-flex mt-4">
+                      <img height="50px" width="50px" class="ml-auto mr-auto" src="../../assets/img/uploadSvg.svg">
+                    </div>
+                    <div class="d-flex">
+                      <strong class="ml-auto mr-auto">Browse Files</strong>
+                    </div>
+                    <div class="d-flex">
+                      <span class="ml-auto mr-auto text-muted">Drag and drop files here</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <strong>Please submit copy of your Social Security Card: </strong>
+            <div class="row mt-2">
+              <div class="col-12">
+                <input id="filetriger" class="d-none" onchange="readfiles(files)" type="file" multiple>
+                <!-- <input id="fileDragName"><input id="fileDragSize"><input
+                    id="fileDragType"><input id="fileDragData"> -->
+                <div id="holder">
+                  <div id="imageAppendDiv" class=""></div>
+                  <div id="browseImage">
+                    <div class="d-flex mt-4">
+                      <img height="50px" width="50px" class="ml-auto mr-auto" src="../../assets/img/uploadSvg.svg">
+                    </div>
+                    <div class="d-flex">
+                      <strong class="ml-auto mr-auto">Browse Files</strong>
+                    </div>
+                    <div class="d-flex">
+                      <span class="ml-auto mr-auto text-muted">Drag and drop files here</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <strong>Please submit copy of your Medical Card: </strong>
+            <div class="row mt-2">
+              <div class="col-12">
+                <input id="filetriger" class="d-none" onchange="readfiles(files)" type="file" multiple>
+                <!-- <input id="fileDragName"><input id="fileDragSize"><input
+                    id="fileDragType"><input id="fileDragData"> -->
+                <div id="holder">
+                  <div id="imageAppendDiv" class=""></div>
+                  <div id="browseImage">
+                    <div class="d-flex mt-4">
+                      <img height="50px" width="50px" class="ml-auto mr-auto" src="../../assets/img/uploadSvg.svg">
+                    </div>
+                    <div class="d-flex">
+                      <strong class="ml-auto mr-auto">Browse Files</strong>
+                    </div>
+                    <div class="d-flex">
+                      <span class="ml-auto mr-auto text-muted">Drag and drop files here</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="d-flex pt-4 mb-3 border-top">
+            <a href="driverVerification.html" class="ml-4 btn mr-lg-5 px-4 backButton">Back</a>
+            <button type="submit" class="ml-auto btn btn-primary mr-lg-5 mr-2 px-4 nextButton">Next</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+<script>
+  function readfiles(files) {
+    for (var i = 0; i < files.length; i++) {
+      // document.getElementById('fileDragName').value = files[i].name
+      // document.getElementById('fileDragSize').value = files[i].size
+      // document.getElementById('fileDragType').value = files[i].type
+      //change to file name
+      reader = new FileReader();
+      reader.onload = function (event) {
+        var imageSrc = event.target.result;
+        var elem = document.createElement("img");
+        elem.setAttribute("src", imageSrc);
+        elem.setAttribute("width", "100px");
+        elem.setAttribute("class", "imageClass");
+        document.getElementById("imageAppendDiv").classList.add('imagesDivScroll')
+        document.getElementById("imageAppendDiv").appendChild(elem);
+        document.getElementById("browseImage").classList.add("d-none");
+      }
+      reader.readAsDataURL(files[i]);
+    }
+  }
+  var holder = document.getElementById('holder');
+  holder.ondragover = function () { this.className = 'hover'; return false; };
+  holder.ondragend = function () { this.className = ''; return false; };
+  holder.ondrop = function (e) {
+    this.className = '';
+    e.preventDefault();
+    readfiles(e.dataTransfer.files);
+  }
+</script>
+
+
+</html>

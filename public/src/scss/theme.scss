@@ -1,0 +1,93 @@
+/*
+
+Theme: Spyre - Slick contemporary multipurpose theme
+Product Page: https://themes.getbootstrap.com/product/spyre-slick-contemporary-multipurpose-theme
+Author: Webinning
+Author URI: https://webinning.co.uk
+
+---
+
+Copyright 2018 Webinning
+
+*/
+
+
+// Core
+@import "bootstrap/functions";
+
+// Variables
+@import "custom/variables";
+@import "spyre/variables";
+@import "bootstrap/variables";
+
+// Mixins
+@import "bootstrap/mixins";
+@import "spyre/mixins";
+
+// Bootstrap components
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/transitions";
+@import "bootstrap/dropdown";
+@import "bootstrap/button-group";
+@import "bootstrap/input-group";
+@import "bootstrap/custom-forms";
+@import "bootstrap/nav";
+@import "bootstrap/navbar"; // Navbar fix: https://github.com/twbs/bootstrap/pull/29951/commits/60542916b421d771d118122b63345c0dadd1748d
+@import "bootstrap/card";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/pagination";
+@import "bootstrap/badge";
+@import "bootstrap/jumbotron";
+@import "bootstrap/alert";
+@import "bootstrap/progress";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/close";
+@import "bootstrap/toasts";
+@import "bootstrap/modal";
+@import "bootstrap/tooltip";
+@import "bootstrap/popover";
+@import "bootstrap/carousel";
+@import "bootstrap/spinners";
+@import "bootstrap/utilities";
+@import "bootstrap/print";
+
+// Spyre components
+@import "spyre/background";
+@import "spyre/background-text";
+@import "spyre/buttons";
+@import "spyre/card";
+@import "spyre/faq";
+@import "spyre/footer";
+@import "spyre/forms";
+@import "spyre/icons";
+@import "spyre/links";
+@import "spyre/move";
+@import "spyre/navbar";
+@import "spyre/preloader";
+@import "spyre/reboot";
+@import "spyre/root";
+@import "spyre/section";
+@import "spyre/shapes";
+@import "spyre/type";
+@import "spyre/utilities";
+@import "spyre/video";
+
+// Vendor
+@import "vendor/aos";
+@import "vendor/material-icons";
+@import "vendor/prism";
+@import "vendor/carousel";
+@import "vendor/fancybox";
+@import "vendor/rellax";
+
+// Custom styles
+@import "custom/styles";

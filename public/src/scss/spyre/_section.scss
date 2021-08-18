@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Section
+   ========================================================================== */
+
+section {
+    position: relative;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+}
+
+
+@include media-breakpoint-up(lg) {
+    section {
+        padding-top: 9rem;
+        padding-bottom: 9rem;
+    }
+}

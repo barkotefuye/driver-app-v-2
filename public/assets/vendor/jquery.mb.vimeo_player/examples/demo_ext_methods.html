@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  jquery.mb.components
+
+  file: demo_ext_methods.html
+  last modified: 26/11/17 12.16
+  Version:  {{ version }}
+  Build:  {{ buildnum }}
+
+  Open Lab s.r.l., Florence - Italy
+  email:  matteo@open-lab.com
+  blog: 	http://pupunzi.open-lab.com
+  site: 	http://pupunzi.com
+  	http://open-lab.com
+
+  Licences: MIT, GPL
+  http://www.opensource.org/licenses/mit-license.php
+  http://www.gnu.org/licenses/gpl.html
+
+  Copyright (c) 2001-2017. Matteo Bicocchi (Pupunzi)
+  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Vimeo Chromeless Player - mb.vimeo_player</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Lekton|Lobster' rel='stylesheet' type='text/css'>
+    <link href="../dist/css/jquery.mb.vimeo_player.min.css" media="all" rel="stylesheet" type="text/css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../dist/jquery.mb.vimeo_player.js"></script>
+
+    <style>
+        *:focus{
+            outline: none;
+        }
+
+        body {
+            border: none;
+            margin: 0;
+            padding: 30px;
+            background: #222c2f;
+            font: normal 16px/20px Lekton, sans-serif;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 50px;
+            font-family: 'Lobster', cursive;
+        }
+
+        h2{
+            font-family: "Open Sans", sans-serif;
+            font-size: 35px;
+            text-align: left;
+            line-height: 60px;
+        }
+
+        h1, h2{
+            font-family: 'Lobster', cursive;
+            text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.30);
+            color: #000000;
+            font-weight: 200;
+        }
+
+        #wrapper{
+            position: relative;
+            min-width: 700px;
+        }
+
+        .console{
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        button, .button {
+            transition: all .4s;
+            display: inline-block;
+            padding: 0px 10px;
+            font-size: 14px;
+            /*text-transform: uppercase;*/
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.40);
+            box-shadow: 0 0 4px rgba(0,0,0,0.4);
+            color:#fff;
+            border: 1px solid transparent;
+            text-decoration: none;
+            line-height: 30px;
+            margin: 3px;
+            border-radius: 10px;
+        }
+
+        button:hover, .button:hover {
+            background-color: rgb(0, 0, 0);
+            color: #FFF;
+            border: 1px solid #fff;
+        }
+
+        #info {
+            position: absolute;
+            top: 0;
+            right: 0;
+            max-width: 300px;
+            color: #212121;
+            background-color: rgba(255, 255, 255, 0.60);
+            font-size: 150%;
+            padding: 10px;
+            display: none;
+        }
+
+        #loader {
+            position: fixed;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background: rgba(0,0,0,0.8);
+        }
+
+        #loading{
+            position: fixed;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100px;
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            margin: auto;
+
+            animation: stretch 1s ease-out 0s alternate infinite;
+        }
+
+        @keyframes stretch {
+            0% {
+                color:#000;
+            }
+            100% {
+                color:#fff;
+            }
+        }
+    </style>
+
+    <script>
+        var myPlayer;
+        jQuery(function () {
+            var isIframe=function(){var a=!1;try{self.location.href!=top.location.href&&(a=!0)}catch(b){a=!0}return a};if(!isIframe()){var logo=$("<a href='http://pupunzi.com/#mb.components/components.html' style='position:absolute;top:0;z-index:1000'><img id='logo' border='0' src='http://pupunzi.com/images/logo.png' alt='mb.ideas.repository'></a>");$("#wrapper").prepend(logo),$("#logo").fadeIn()}
+
+            /**
+             * Initialize the Vimeo Player with a fallback image for mobile
+             */
+            myPlayer = jQuery(".player").vimeo_player({
+                mobileFallbackImage:"https://camo.githubusercontent.com/7316ea8523a142146ee0073fabf74589bc485269/68747470733a2f2f707570756e7a692e636f6d2f6d622e636f6d706f6e656e74732f6d622e76696d656f5f706c617965722f76696d656f506c617965722e6a7067",
+                onReady: function(player){}
+            });
+
+            /**
+             * Bind custom events
+             */
+            myPlayer.on("VPTime", function (e) {
+                /**
+                 * VPTime:
+                 * Trace the time
+                 */
+                $("#time").html(Math.floor(e.time) + " sec.");
+
+            }).on("VPStart VPFallback", function(e){
+                /**
+                 * VPStart:
+                 * Hide the loader once the player start
+                 */
+
+                //console.debug(e);
+
+                $("#loader").fadeOut(1000);
+
+            }).on("VPReady", function(e){
+
+/*
+                console.debug(e);
+                setTimeout(function(){
+                    myPlayer.v_play();
+                }, 1000);
+
+*/
+                if(!e.opt.autoPlay)
+                    $("#loader").hide();
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div id="wrapper" style="position:relative; padding:10px 0;z-index:10">
+
+    <!--<iframe src="https://player.vimeo.com/video/12199910?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0" width="1422" height="800" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+
+    <h1 style="color:white">jQuery.mb.vimeo_player</h1>
+    <h2 style="color:white; text-align: center">An HTML5 Background player<br>for Vimeo's video</h2>
+    <h2 id="time" style="color:white; text-align: center">0 sec.</h2>
+    <div id="loader"><div id="loading">Loading video</div></div>
+    <div class="console">
+        <h2 style="color:white">Available methods to control the video</h2>
+        <button onclick="myPlayer.v_pause()">v_pause</button>
+        <button onclick="myPlayer.v_play()">v_play</button>
+        <button onclick="myPlayer.v_toggle_play()">v_toggle_play</button>
+        <button onclick="myPlayer.v_seekTo(20)">v_seekTo (20 sec)</button>
+        <br><br>
+        <button onclick="myPlayer.v_mute()">v_mute</button>
+        <button onclick="myPlayer.v_unmute()">v_unmute</button>
+        <button onclick="myPlayer.v_toggle_volume()">v_toggle_volume</button>
+        <button onclick="myPlayer.v_set_volume(.8)">v_set_volume (80)</button>
+        <br><br>
+        <button onclick="myPlayer.v_set_align('left,top')">v_set_align (top/left)</button>
+        <button onclick="myPlayer.v_set_align('center,center')">v_set_align (center/center)</button>
+        <button onclick="myPlayer.v_set_align('right,bottom')">v_set_align (right/bottom)</button>
+        <br><br>
+        <button onclick="myPlayer.v_fullscreen()">v_fullscreen</button>
+        <button onclick="jQuery('#bgndVideo').v_change_movie({videoURL:'240466644',ratio:16/9, startAt:10, loop:false, addRaster:true})">v_change_movie</button>
+    </div>
+
+    <div id="info"></div>
+
+
+    <a style="position: fixed;bottom:40px;right: 30px;" href="http://pupunzi.open-lab.com/consider-a-donation/" target="_blank">
+        <img border="0" alt="PayPal" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG_global.gif" class="alignright">
+    </a>
+    <!--https://vimeo.com/14352658, 82820412, 16917950, 56810854, 35396305, 12199910 https://vimeo.com/202763350-->
+
+
+    <a id="bgndVideo" class="player" data-property="{videoURL:'12199910',containment:'body', showControls:false, fadeTime:100, autoPlay:true, loop:true, vol:50, mute:true, startAt:0, stopAt:215, opacity:1, addRaster:false}">My video</a>
+
+</div>
+
+<style>
+    #wp {
+        position: absolute;
+        z-index: 10;
+        min-width: 300px;
+        background: rgba(0, 0, 0, 0.55);
+        /*background: #ffb200;*/
+        color: #fff;
+        font-size: 24px;
+        line-height: 24px;
+        padding: 20px;
+        bottom:60px;
+        cursor: pointer;
+        text-align: left;
+        border-radius: 10px;
+        font-family: 'Lobster', cursive;
+    }
+
+    #wp:hover {
+        background: #000000;
+    }
+
+    #wp img {
+        width: 60px;
+        margin-right: 20px;
+    }
+</style>
+<div id="wp" onclick="self.location.href='https://pupunzi.com/wpPlus/go-plus.php?plugin_prefix=VIPL'">
+    <img src="https://pupunzi.com/wpPlus/images/VIPL.svg" style="float: left">
+    <span>Get the <br><b>Wordpress</b> Plug-in!</span>
+</div>
+
+</body>
+</html>

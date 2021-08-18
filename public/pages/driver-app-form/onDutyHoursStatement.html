@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Nile Express</title>
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../assets/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../assets/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../assets/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../assets/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../assets/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../assets/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../assets/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/index.css">
+  <script src="../../assets/js/index.js"></script>
+</head>
+
+<body>
+  <div class="d-flex">
+    <img class="ml-auto mr-auto mt-2" height="120px" width="227px" src="logo.jpeg" />
+  </div>
+  <div class="d-flex mt-2 mb-4">
+    <div class="col-lg-7 col-10 ml-auto mr-auto bg-white">
+      <div class="pb-5 mt-4 border-bottom">
+        <h3 class="ml-4">Driver Statement of On-Duty Hours (For Newly Hired & Intermittent Drivers)</h3>
+      </div>
+      <div class="container mt-3 mb-4">
+        <form class="form-group" action="/alcohol-test" method="POST">
+
+          <!-- <div class="pb-2 mt-4 border-bottom">
+            <h5>Driver's Statement for Previous Employers</h5>
+          </div> -->
+          <p class="mt-5">The following section will ask for information to verify your driving record. This information may also be verfied by your Motor Carrier</p>
+          <p class="mt-5">Motor carriers using a driver for first time shall obtain from the driver a signed statement giving the total on-duty during the immediately preceding 7 days and time at which such driver was last relived from duty prior to beginning work for this carrier (Rule 395 (j)(2) of the Federal Motor Carrier Safety Regulations).</p>
+          
+          <p class="mt-5 font-weight-bold">NOTE: Hours for any compensated work during the preceding 7 days, including work for a non-motor carrier entity , must be recorded on the form</p>
+          
+          <div class="row mt-3">
+            <div class="col-lg-6">
+              <p>Driver Name: </p>
+              <input class="form-control fieldsFocus" type="text"  required>
+            </div>
+          
+            
+            <div class="col-lg-6">
+              <p>Social Security Number:</p>
+              <div class="row">
+                <div class="col-lg-3">
+                  <!-- <input class="form-control fieldsFocus" placeholder="(000) 000-0000" type="text"  maxlength = "12" required> -->
+                     <input class="form-control fieldsFocus" name="ssnStart" type="password" pattern="[0-9]{3}"  aria-label="3-digit start social security number" size="3" maxlength="3" oninput="autotab(this, document.driverVerify.ssnMiddle)" required/>
+                </div>-
+                <div class="col-lg-2">
+                      <input class="form-control fieldsFocus" name="ssnMiddle" type="password" pattern="[0-9]{2}"  aria-label="2-digit middle social security number" size="2" maxlength="2" oninput="autotab(this, document.driverVerify.ssnLastFour)" required/> 
+                </div>-
+                <div class="col-lg-4">
+                      <input class="form-control fieldsFocus" name="ssnLastFour" type="password" pattern="[0-9]{4}"  aria-label="last 4-digits of social security number" size="4" maxlength="4" required/>
+                </div> 
+                   
+                </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-lg-5 col-12">
+              <p> Driver’s License Number:  </p>
+              <input class="form-control fieldsFocus" type="text" name = "currentCity" required>
+            </div>
+            <div class="col-lg-1 col-12">
+              
+  
+             <p>State:</p> 
+              <input class="form-control ml-auto mr-5 fieldsFocus" type="text" maxlength = "2" name = "currentState" required>
+            
+            </div>
+            <div class="col-lg-6 col-12">
+              
+  
+              <p>Class:</p> 
+               <input class="form-control ml-auto mr-5 fieldsFocus" type="date" maxlength = "2" name = "currentState" required>
+             
+             </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-lg-6">
+              <p>Endorsements: </p>
+              <input class="form-control fieldsFocus" type="text"  required>
+            </div>
+          
+            
+            <div class="col-lg-6">
+              <p>Restrictions:</p>
+              <input class="form-control fieldsFocus" type="text"  required>
+            </div>
+          </div>
+          <br>
+         
+
+          <div class="p-3 ">
+            <div class="row">
+              <div class="col-12">
+                <table class="table table-bordered table-responsive">
+                  <thead>
+                    <tr>
+                      <th class="thBackgroudColor">Day</th>
+                      <th class="thBackgroudColor">1 (Yesterday)</th>
+                      <th class="thBackgroudColor">2</th>
+                      <th class="thBackgroudColor">3</th>
+                      <th class="thBackgroudColor">4</th>
+                      <th class="thBackgroudColor">5</th>
+                      <th class="thBackgroudColor">6</th>
+                      <th class="thBackgroudColor">7</th>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+                  </thead>
+                  <tbody class= "addDriverLicense">
+                    <tr>
+                      <th class="thBackgroudColor">Date</th>
+                      <td contenteditable="true" class="tableFields"><input type= "date"/></td>
+                      <td contenteditable="true" class="tableFields"><input type= "date"/></td>
+                      <td contenteditable="true" class="tableFields"><input type= "date"/></td>
+                      <td contenteditable="true" class="tableFields"><input type= "date"/></td>
+                      <td contenteditable="true" class="tableFields"><input type= "date"/></td>
+                      <td contenteditable="true" class="tableFields"><input type= "date"/></td>
+                      <td contenteditable="true" class="tableFields"><input type= "date"/></td>
+                      <th class="thBackgroudColor">Total Hours</th>
+                    </tr>
+                    <tr>
+                      <th class="thBackgroudColor">Hours Worked</th>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                      <td contenteditable="true" class="tableFields"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>I hereby certify that the information given is correct to the best of my knowledge and belief, and that I was last relieved
+              from work at: <span class="text-danger font-weight-bold">*</span></p>
+            <input  type="date" name="felony" required>    
+            <input  type="time" name="felony" required>     
+          </div>
+
+          <div class= "mt-3">
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus" type="text" required>
+                <span class="pl-0 pt-2 text-sm text-muted font-sm">Printed Name</span>
+              </div>
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus" type="date" required>
+                <span class="pl-0 pt-2 text-sm text-muted font-sm">Today's Date</span>
+              </div>
+            </div>
+        </div>
+        <!-- Content -->
+        <p class="font-weight-bold mt-5">Applicant's Signature</p>
+        <div class="col-lg-6 col-12 pl-0">
+          <canvas id="sig-canvas">
+          </canvas>
+        </div>
+        <!-- <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button> -->
+        <div class="d-flex col-lg-6 col-12 pr-1">
+          <button class="btn btn-default ml-auto" id="sig-clearBtn">Clear</button>
+        </div>
+
+
+
+
+        <div class="pb-2 mt-4 border-bottom">
+          <h5>Driver Certification for Other Compensated Work</h5>
+        </div>
+        <h4 class ="mt-5">Motor Carrier Requirements</h4>
+        <p>When employed by a motor carrier, a driver must report to the carrier all on-duty time including time working for other employers.
+          The definition of on-duty time found in 395.2 paragraphs (8) and (9) of the Federal Motor Carrier Safety Regulations includes time
+          performing and other work in the capacity of, or in the employment or service of, a common, contract or private motor carrier, also
+          performing and compensated work for any non-motor carrier entity.
+        </p>
+        
+        <br>
+        <h4 class = "mt-5">For the Driver Applicant</h4>
+        <div class="p-3">
+          <p>Are you currently working for another employer? <span class="text-danger font-weight-bold">*</span></p>
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <div>
+                <input class="fieldsFocusRadio" type="radio" name="authorized" id="yesWorking" required>
+                <label for="yesWorking">
+                  Yes
+                </label>
+              </div>
+              <div>
+                <input class="fieldsFocusRadio" type="radio" name="authorized" id="noWorking" required>
+                <label for="noWorking">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3">
+          <p>At this time do you intend to work for another employer while still employed by this company? <span class="text-danger font-weight-bold">*</span></p>
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <div>
+                <input class="fieldsFocusRadio" type="radio" name="authorized" id="yesWorkForAnother" required>
+                <label for="yesWorkForAnother">
+                  Yes
+                </label>
+              </div>
+              <div>
+                <input class="fieldsFocusRadio" type="radio" name="authorized" id="noWorkForAnother" required>
+                <label for="noWorkForAnother">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <br>
+        <p>I hereby certify that the information given above is accurate and I understand that once I become employed with this
+          company, if I begin working for any additional employer(s) for compensation that I must inform this company
+          immediately of such employment activity. </p>
+<br>
+          <div class= "mt-3">
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus" type="text" required>
+                <span class="pl-0 pt-2 text-sm text-muted font-sm">Printed Name</span>
+              </div>
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus" type="date" required>
+                <span class="pl-0 pt-2 text-sm text-muted font-sm">Today's Date</span>
+              </div>
+            </div>
+        </div>
+        <!-- Content -->
+        <p class="font-weight-bold mt-5">Applicant's Signature</p>
+        <div class="col-lg-6 col-12 pl-0">
+          <canvas id="sig-canvas">
+          </canvas>
+        </div>
+        <!-- <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button> -->
+        <div class="d-flex col-lg-6 col-12 pr-1">
+          <button class="btn btn-default ml-auto" id="sig-clearBtn">Clear</button>
+        </div>
+
+          <div class="d-flex pt-4 mb-3 border-top">
+            <a href="driverVerification.html" class="ml-4 btn mr-lg-5 px-4 backButton">Back</a>
+            <button type="submit" class="ml-auto btn btn-primary mr-lg-5 mr-2 px-4 nextButton">Next</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+<script>
+  function readfiles(files) {
+    for (var i = 0; i < files.length; i++) {
+      // document.getElementById('fileDragName').value = files[i].name
+      // document.getElementById('fileDragSize').value = files[i].size
+      // document.getElementById('fileDragType').value = files[i].type
+      //change to file name
+      reader = new FileReader();
+      reader.onload = function (event) {
+        var imageSrc = event.target.result;
+        var elem = document.createElement("img");
+        elem.setAttribute("src", imageSrc);
+        elem.setAttribute("width", "100px");
+        elem.setAttribute("class", "imageClass");
+        document.getElementById("imageAppendDiv").classList.add('imagesDivScroll')
+        document.getElementById("imageAppendDiv").appendChild(elem);
+        document.getElementById("browseImage").classList.add("d-none");
+      }
+      reader.readAsDataURL(files[i]);
+    }
+  }
+  var holder = document.getElementById('holder');
+  holder.ondragover = function () { this.className = 'hover'; return false; };
+  holder.ondragend = function () { this.className = ''; return false; };
+  holder.ondrop = function (e) {
+    this.className = '';
+    e.preventDefault();
+    readfiles(e.dataTransfer.files);
+  }
+</script>
+
+</html>

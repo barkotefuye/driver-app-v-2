@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Background overlays
+   ========================================================================== */
+
+@each $element, $value in $background-overlay-opacities {
+    .overlay-#{$element} {
+        &::before {
+            background-color: rgba($secondary, $value) !important;
+        }
+    }
+
+    @each $color, $c in $theme-colors {
+        .overlay-#{$color}-#{$element} {
+            &::before {
+                background-color: rgba($c, $value) !important;
+            }
+        }
+    }
+}

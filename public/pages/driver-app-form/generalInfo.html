@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Nile Express</title>
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="57x57" href="../assets/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../assets/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../assets/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../assets/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../assets/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../assets/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../assets/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../assets/css/index.css">
+  <script src="../../assets/js/index.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <!-- <script>
+    function autotab(current,to)
+    {
+        if (current.getAttribute && current.value.length==current.getAttribute("maxlength")) 
+        {
+            to.focus() 
+        }
+    }
+  </script> -->
+</head>
+
+<body>
+  <div class="d-flex">
+    <img class="ml-auto mr-auto mt-2" height="120px" width="227px" src="../../assets/img/logo.jpeg" />
+  </div>
+  <div class="d-flex mt-2 mb-4">
+    <div class="col-lg-7 col-10 ml-auto mr-auto bg-white">
+      <div class="pb-5 mt-4 border-bottom">
+        <h3 class="ml-4">General Information</h3>
+        <p class="ml-4">Please fill out contact information</p>
+      </div>
+      <div class="container mt-3 mb-4">
+        <form class="form-group form-check" id = "generalInfoForm" name = "generalInfo" action="/driver-verification" method ="POST" >  <!--  FORM START   -->
+
+          <div class="p-3">
+            <p>Full Name <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus" type="text" maxlength = "30" name = "fname" required>
+                <span class="pl-0 pt-2 text-sm text-muted font-sm">First Name</span>
+              </div>
+              <div class="col-lg-6 col-12">
+                <input class="form-control ml-auto mr-5 fieldsFocus" type="text" maxlength = "30" name = "lname" required>
+                <span class="pt-2 text-muted font-sm" >Last Name</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="p-3">
+            <p>Current Address <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-12">
+                <input class="form-control fieldsFocus" type="text" name = "currentAddress1"  id = "address1" required>
+                <span class="pt-2 text-muted font-sm">Street Address</span>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-12">
+                <input class="form-control fieldsFocus" type="text" name = "currentAddress2" id = "address2">
+                <span class="pt-2 text-muted font-sm"><i>Street Address Line 2</i></span>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus" type="text" name = "currentCity"  id = "city" required>
+                <span class="pl-0 pt-2 text-sm text-muted font-sm">City</span>
+              </div>
+              <div class="col-lg-2 col-12">
+                <input class="form-control ml-auto mr-5 fieldsFocus" type="text" maxlength = "2" name = "currentState" id = "state" required>
+                <span class="pt-2 text-muted font-sm" >State / Province</span>
+              </div>
+              <div class="col-lg-4 col-12">
+                <input class="form-control fieldsFocus" type="text" maxlength="10" name = "currentZipcode"  id = "zipcode" required>
+                <span class="pt-2 text-muted font-sm">Postal / Zip Code</span>
+              </div>
+            </div>
+            <!-- <div class="row mt-3">
+              <div class="col-lg-2 col-12">
+                <input class="form-control fieldsFocus" type="number" required>
+                <span class="pt-2 text-muted font-sm">Postal / Zip Code</span>
+              </div>
+            </div> -->
+          </div>
+
+          <div class="p-3">
+            <p>Phone Number <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-2 col-12">
+                <!-- <input class="form-control fieldsFocus" placeholder="(000) 000-0000" type="text"  maxlength = "12" required> -->
+                   <input class="form-control fieldsFocus" name="phoneAreaCode" type="tel" pattern="[0-9]{3}" placeholder="555" aria-label="3-digit area code" size="2" maxlength="3" oninput="autotab(this, document.generalInfo.phoneFirstThree)"/>
+              </div>
+              <div class="col-lg-2 col-12">
+                    <input class="form-control fieldsFocus" name="phoneFirstThree" type="tel" pattern="[0-9]{3}" placeholder="555" aria-label="3-digit prefix" size="2" maxlength="3" oninput="autotab(this, document.generalInfo.phoneLastFour)"/> 
+              </div>-
+              <div class="col-lg-2 col-12">
+                    <input class="form-control fieldsFocus" name="phoneLastFour" type="tel" pattern="[0-9]{4}" placeholder="5555" aria-label="4-digit number" size="3" maxlength="4"/>
+              </div> 
+                 
+              </div>
+          </div>
+
+          <div class="p-3">
+            <p>E-mail <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus" type="email" name = "email" required>
+                <span class="pt-2 text-muted font-sm">example@example.com</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>Position Applying For <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <select class="form-control fieldsFocus"  name= "jobPosition" required>
+                  <option disabled>Please Select</option>
+                  <option>Driver </option>
+                  <option>Owner Operator </option>
+                  <option>Other (Please specify...)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>If you selected other, please specify job position here</p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus"  name = "otherJobPosition" type="text">
+              </div>
+            </div>
+          </div>          
+          
+          <div class="p-3">
+            <p>Choose Job Hours <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+              <select  name="job-type"  class="form-control fieldsFocus" name = "jobHours"  required>
+                <option disabled>Please Select</option>
+                <option value="full-time">Full-Time</option>
+                <option value="part-time">Part-Time</option>
+                <option value="temporary">Temporary</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3">
+          <p>Have you worked with us before? <span class="text-danger font-weight-bold">*</span></p>
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <div>
+                <input class="fieldsFocusRadio" type="radio" name="workedWithUs" id="yesWorkedWithUs" >
+                <label for="yesWorkedWithUs">
+                  Yes
+                </label>
+              </div>
+              <div>
+                <input class="fieldsFocusRadio" type="radio" name="workedWithUs" id="noWorkedWithUs" >
+                <label for="noWorkedWithUs">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="p-3">
+          <p>Were you referred? If so, please name the reference</p>
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <input class="form-control fieldsFocus" type="text" name = "reference" maxlength= "100">
+            </div>
+          </div>
+        </div>
+            
+          <div class="p-3">
+            <p>Are you employed now? <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="employedNow" id="yesEmployedNow" required>
+                  <label for="yesEmployedNow">
+                    Yes
+                  </label>
+                </div>
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="employedNow" id="noEmployedNow" required>
+                  <label for="noEmployedNow">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>If not, when was the last date of employment?</p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <input class="form-control fieldsFocus checkingField" name="lastDateOfEmployment" type="date">
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="p-3">
+            <p>Are you legally authorized to work in US? <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="authorized" id="yesAuthorized" required>
+                  <label for="yesAuthorized">
+                    Yes
+                  </label>
+                </div>
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="authorized" id="noAuthorized" required>
+                  <label for="noAuthorized">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>Have you ever been convicted of a felony? <span class="text-danger font-weight-bold">*</span></p>
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="felony" id="yesFelony" required>
+                  <label for="yesFelony">
+                    Yes
+                  </label>
+                </div>
+                <div>
+                  <input class="fieldsFocusRadio" type="radio" name="felony" id="noFelony" required>
+                  <label for="noFelony">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <p>If yes, please explain below </p>
+            <div class="row">
+              <div class="col-12">
+                <textarea class="form-control fieldsFocus" placeholder="Type here..." rows="4"></textarea>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="d-flex pt-4 mb-3 border-top">
+            <a href="/driver-app" class="ml-4 btn mr-lg-5 px-4 backButton">Back</a>
+            <button type="submit" class="ml-auto btn btn-primary mr-lg-5 mr-2 px-4 nextButtonGeneral">Next</button>
+          </div>
+
+        </form> <!-- END OF FORM-->
+      </div>
+      </div>
+  </div>
+  <script>
+        // This sample uses the Places Autocomplete widget to:
+    // 1. Help the user select a place
+    // 2. Retrieve the address components associated with that place
+    // 3. Populate the form fields with those address components.
+    // This sample requires the Places library, Maps JavaScript API.
+    // Include the libraries=places parameter when you first load the API.
+    // For example: <script
+    // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+    let autocomplete;
+    let address1Field;
+    let address2Field;
+    let postalField;
+
+    function initAutocomplete() {
+      address1Field = document.querySelector("#address1");
+      address2Field = document.querySelector("#address2");
+      postalField = document.querySelector("#zipcode");
+      // Create the autocomplete object, restricting the search predictions to
+      // addresses in the US and Canada.
+      autocomplete = new google.maps.places.Autocomplete(address1Field, {
+        componentRestrictions: { country: ["us"] },
+        fields: ["address_components", "geometry"],
+        types: ["address"],
+      });
+      address1Field.focus();
+      // When the user selects an address from the drop-down, populate the
+      // address fields in the form.
+      autocomplete.addListener("place_changed", fillInAddress);
+    }
+
+    function fillInAddress() {
+      // Get the place details from the autocomplete object.
+      const place = autocomplete.getPlace();
+      let address1 = "";
+      let postcode = "";
+
+      // Get each component of the address from the place details,
+      // and then fill-in the corresponding field on the form.
+      // place.address_components are google.maps.GeocoderAddressComponent objects
+      // which are documented at http://goo.gle/3l5i5Mr
+      for (const component of place.address_components) {
+        const componentType = component.types[0];
+
+        switch (componentType) {
+          case "street_number": {
+            address1 = `${component.long_name} ${address1}`;
+            break;
+          }
+
+          case "route": {
+            address1 += component.short_name;
+            break;
+          }
+
+          case "postal_code": {
+            postcode = `${component.long_name}${postcode}`;
+            break;
+          }
+
+          case "postal_code_suffix": {
+            postcode = `${postcode}-${component.long_name}`;
+            break;
+          }
+          case "locality":
+            document.querySelector("#city").value = component.long_name;
+            break;
+
+          case "administrative_area_level_1": {
+            document.querySelector("#state").value = component.short_name;
+            break;
+          }
+        }
+      }
+      address1Field.value = address1;
+      postalField.value = postcode;
+      // After filling the form with address components from the Autocomplete
+      // prediction, set cursor focus on the second address line to encourage
+      // entry of subpremise information such as apartment, unit, or floor number.
+      address2Field.focus();
+    }
+  </script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBi3DHOpxGAb_QwCqaaeMMFKKX9MBmBug&callback=initAutocomplete&libraries=places&v=weekly" 
+  async>
+</script>
+
+</body>
+
+</html>

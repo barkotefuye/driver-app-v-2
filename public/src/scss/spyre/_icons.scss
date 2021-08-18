@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Icons
+   ========================================================================== */
+
+.icon {
+    @include gradient-radial-bg(rgba($icon-bg-color, .1), rgba($icon-bg-color, .35));
+    display: flex;
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    text-decoration: none !important;
+    transition: transform .3s ease;
+
+    i {
+        display: inline-flex;
+        margin: auto;
+        color: $icon-color;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &.icon-sm {
+        width: 55px;
+        height: 55px;
+    }
+
+    &.icon-lg {
+        width: 150px;
+        height: 150px;
+    }
+}

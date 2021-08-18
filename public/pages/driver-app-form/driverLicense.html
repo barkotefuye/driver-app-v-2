@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Nile Express</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../assets/img/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../assets/img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../assets/img/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../assets/img/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../assets/img/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/img/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../assets/img/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/index.css">
+    <script src="../../assets/js/index.js"></script>
+  </head>
+  
+  <body>
+    <div class="d-flex">
+      <img class="ml-auto mr-auto mt-2" height="120px" width="227px" src="../../assets/img/logo.jpeg" />
+    </div>
+  <div class="d-flex mt-2 mb-4">
+    <div class="col-lg-7 col-10 ml-auto mr-auto bg-white">
+      <div class="pb-5 mt-4 border-bottom">
+        <h3 class="ml-4">Current Driver's License</h3>
+        
+      </div>
+      <div class="container mt-3 mb-4">
+        <form class="form-group" action="/employment-history" method ="POST"> <!--FORM START-->
+            <p>A copy of a current, valid license is required per §383.23(a), §391.11(b)(5), and §391.33 of the Federal
+                Motor Carrier Safety Regulations. Please make copies of the front and back of your current driver’s
+                license and attach below.</p>
+          <div class="p-3">
+            <strong>Please submit copy of your latest Driver's License (both front and back): </strong>
+            <div class="row mt-2">
+              <div class="col-12">
+                <input id="filetriger" class="d-none" onchange="readfiles(files)" type="file" multiple>
+                <!-- <input id="fileDragName"><input id="fileDragSize"><input
+                    id="fileDragType"><input id="fileDragData"> -->
+                <div id="holder">
+                  <div id="imageAppendDiv" class=""></div>
+                  <div id="browseImage">
+                    <div class="d-flex mt-4">
+                      <img height="50px" width="50px" class="ml-auto mr-auto" src="../../assets/img/uploadSvg.svg">
+                    </div>
+                    <div class="d-flex">
+                      <strong class="ml-auto mr-auto">Browse Files</strong>
+                    </div>
+                    <div class="d-flex">
+                      <span class="ml-auto mr-auto text-muted">Drag and drop files here</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         
+          
+
+          <div class="d-flex pt-4 mb-3 border-top">
+            <a href="driverVerification.html" class="ml-4 btn mr-lg-5 px-4 backButton">Back</a>
+            <button type="submit" class="ml-auto btn btn-primary mr-lg-5 mr-2 px-4 nextButton">Next</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+<script>
+  function readfiles(files) {
+    for (var i = 0; i < files.length; i++) {
+      // document.getElementById('fileDragName').value = files[i].name
+      // document.getElementById('fileDragSize').value = files[i].size
+      // document.getElementById('fileDragType').value = files[i].type
+      //change to file name
+      reader = new FileReader();
+      reader.onload = function (event) {
+        var imageSrc = event.target.result;
+        var elem = document.createElement("img");
+        elem.setAttribute("src", imageSrc);
+        elem.setAttribute("width", "100px");
+        elem.setAttribute("class", "imageClass");
+        document.getElementById("imageAppendDiv").classList.add('imagesDivScroll')
+        document.getElementById("imageAppendDiv").appendChild(elem);
+        document.getElementById("browseImage").classList.add("d-none");
+      }
+      reader.readAsDataURL(files[i]);
+    }
+  }
+  var holder = document.getElementById('holder');
+  holder.ondragover = function () { this.className = 'hover'; return false; };
+  holder.ondragend = function () { this.className = ''; return false; };
+  holder.ondrop = function (e) {
+    this.className = '';
+    e.preventDefault();
+    readfiles(e.dataTransfer.files);
+  }
+</script>
+
+</html>

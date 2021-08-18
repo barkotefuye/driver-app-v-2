@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Background
+   ========================================================================== */
+
+.bg-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    overflow: hidden;
+
+    &.overlay {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba($secondary, .5);
+        }
+    }
+}

@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Prism Syntax highlighter
+   ========================================================================== */
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    border: 1px solid $prism-border-color;
+    border-radius: $prism-border-radius;
+    background: $prism-bg-color;
+}
+
+code[class*=language-],
+pre[class*=language-] {
+    font-family: $prism-font-family;
+    font-size: $prism-font-size;
+}
+
+pre[class*="language-"] {
+    padding-top: 0;
+    padding-bottom: .5rem; 
+}
+
+div.code-toolbar {
+    margin-bottom: 3rem;
+
+    > .toolbar {
+        top: 2px;
+        right: 4px;
+        padding: 1px 1px 1px 10px;
+        opacity: 1 !important;
+        background: $prism-bg-color;
+
+        .toolbar-item {
+            a,
+            button,
+            span {
+                box-shadow: none;
+                border-radius: 3px;
+                background: none;
+                color: $gray-600;
+
+                &:hover {
+                    border-color: $prism-button-bg;
+                    background: $prism-button-bg;
+                    color: $prism-button-color;
+                }
+            }
+        }
+    }
+}

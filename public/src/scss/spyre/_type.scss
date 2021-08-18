@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Type
+   ========================================================================== */
+
+/* Title underline
+   ========================================================================== */
+.title-underline {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -7px;
+        left: 0;
+        width: 50px;
+        height: 1px;
+        background-color: $primary;
+    }
+}
+
+
+/* Misc
+   ========================================================================== */
+
+/* Blockquotes */
+.blockquote {
+    position: relative;
+    padding-left: 1.75rem;
+    padding-top: 1.5rem;
+
+    &::before {
+        content: '“';
+        position: absolute;
+        left: 0;
+        font-size: 2em;
+        line-height: 1em;
+        top: 0;
+        color: $gray-900;
+        font-family: $headings-font-family;
+    }
+}
+
+.blockquote-footer {
+    font-weight: 500;
+  
+    &::before {
+      display: none;
+    }
+}

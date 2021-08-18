@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Shapes
+   ========================================================================== */
+
+.square,
+.rectangle {
+    &::before {
+        content: "";
+        display: block;
+    }
+}
+
+.square {
+    &::before {
+        padding-top: 100%;
+    }
+}
+
+.rectangle {
+    &::before {
+        padding-top: 50%;
+    }
+
+    &.standing {
+        &::before {
+            padding-top: 200%;
+        }
+    }
+}

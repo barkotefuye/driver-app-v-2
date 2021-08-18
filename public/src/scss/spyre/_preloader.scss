@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Preloader
+   ========================================================================== */
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $preloader-zindex; 
+    background-color: $preloader-bg-color;
+}
+
+.spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%);
+
+    .circles {
+        position: relative;
+        margin: $spinner-size auto;
+        width: $spinner-size;
+        height: $spinner-size;
+        text-align: center;
+        animation: dotsRotate $spinner-speed infinite linear;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 60%;
+            height: 60%;
+            display: inline-block;
+            border-radius: 100%;
+            background-color: $spinner-color;
+            animation: dotsBounce $spinner-speed infinite ease-in-out;
+        }
+
+        &::after {
+            top: auto;
+            bottom: 0;
+            animation-delay: - $spinner-speed/2;
+        }
+    }
+}
+
+
+/* Keyframes */
+@keyframes dotsRotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+ 
+@keyframes dotsBounce {
+    0%, 100% {
+        transform: scale(0);
+    } 50% {
+        transform: scale(1.0);
+    }
+}

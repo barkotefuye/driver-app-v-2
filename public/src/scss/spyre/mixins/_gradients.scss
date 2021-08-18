@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Gradients for backgrounds
+   ========================================================================== */
+
+@mixin gradient-x-bg($start-color: $gray-700, $end-color: $gray-800, $start-percent: 0%, $end-percent: 100%) {
+    background: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent) !important;
+}
+
+@mixin gradient-y-bg($start-color: $gray-700, $end-color: $gray-800, $start-percent: 0%, $end-percent: 100%) {
+    background: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent) !important;
+}
+
+@mixin gradient-directional-bg($start-color: $gray-700, $end-color: $gray-800, $deg: 45deg) {
+    background-image: linear-gradient($deg, $start-color, $end-color) !important;
+}
+
+@mixin gradient-x-three-colors-bg($start-color: $blue, $mid-color: $purple, $color-stop: 50%, $end-color: $red) {
+  background: linear-gradient(to right, $start-color, $mid-color $color-stop, $end-color) !important;
+}
+
+@mixin gradient-y-three-colors-bg($start-color: $blue, $mid-color: $purple, $color-stop: 50%, $end-color: $red) {
+  background: linear-gradient($start-color, $mid-color $color-stop, $end-color) !important;
+}
+
+@mixin gradient-radial-bg($inner-color: $gray-700, $outer-color: $gray-800) {
+    background: radial-gradient(circle, $inner-color, $outer-color) !important;
+}
+
+@mixin gradient-striped-bg($color: rgba($white, .15), $angle: 45deg) {
+    background: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent) !important;
+}

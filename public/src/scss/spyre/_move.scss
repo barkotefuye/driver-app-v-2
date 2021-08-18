@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Move element
+   ========================================================================== */
+
+.move {
+    position: absolute;
+    bottom: .5rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    a {
+        color: $gray-600;
+        line-height: 0;
+        opacity: 0.3;
+        transition: opacity .35s ease;
+        
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

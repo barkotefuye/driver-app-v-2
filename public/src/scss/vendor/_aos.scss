@@ -1,0 +1,15 @@
+/* ==========================================================================
+   AOS - Animate on scroll library
+   ========================================================================== */
+
+
+@if $disable-animations-on-mobile {
+    @include media-breakpoint-down(md) {
+        [data-aos] {
+            transform: none !important;
+            transition: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    }
+}

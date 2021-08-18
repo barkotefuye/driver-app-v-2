@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Reboot
+   ========================================================================== */
+
+html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+}
+
+body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth
+}
+
+
+/* Code */
+pre,
+code,
+kbd,
+samp {
+  font-size: $code-font-size;
+}
+
+::-moz-selection{
+    background: $selection-bg-color;
+    color: $selection-color;
+}
+
+::selection {
+    background: $selection-bg-color;
+    color: $selection-color;
+}
