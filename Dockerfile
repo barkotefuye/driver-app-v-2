@@ -1,9 +1,9 @@
 FROM node:14.16.0
 
-COPY package.json /package.json
+COPY package*.json ./
 
-RUN npm install
+RUN npm install --only=production
 
-COPY . /
+COPY . ./
 
 CMD ["node", "server.js"]
